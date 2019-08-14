@@ -1,5 +1,7 @@
 FROM php:7.3-cli-alpine
 
+COPY ssh_config /etc/ssh/ssh_config
+
 RUN apk update \ 
     && apk add rsync \
     && apk add openssh \
