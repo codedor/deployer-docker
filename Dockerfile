@@ -13,4 +13,8 @@ RUN curl -LO https://deployer.org/deployer.phar && \
 
 RUN apk add --update nodejs nodejs-npm
 
-CMD ['dep']
+# Copies your code file from your action repository to the filesystem path `/` of the container
+COPY entrypoint.sh /entrypoint.sh
+
+# Code file to execute when the docker container starts up (`entrypoint.sh`)
+ENTRYPOINT ["/entrypoint.sh"]
