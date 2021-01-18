@@ -1,0 +1,11 @@
+name: 'Deployer deploy'
+description: 'Deploy a project using deployer'
+inputs:
+  private-key:  # id of input
+    description: 'Private SSH key with access to server deploying to'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
